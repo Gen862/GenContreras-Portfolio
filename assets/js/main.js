@@ -1,11 +1,3 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -34,16 +26,98 @@
   });
 
   /**
-   * Toggle mobile nav dropdowns
+   * Validate form
    */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
+  function validateForm(){
+    var name = document.getById("name").value;
+    var email = document.getById("email").value;
+    var subject = document.getById("subject").value;
+    var message = document.getById("message").value;
+
+    if(name == ""){
+      alert("Este campo é requerido");
+      return false;
+    }
+
+    if(email == ""){
+      alert("Seu email é requerido");
+      return false;
+    }
+    else if (!email.includes("@")){
+      alert("Email invalido.")
+      return false;
+    }
+
+    if(subject == ""){
+      alert("Este campo é requerido");
+      return false;
+    }
+    if(message == ""){
+      alert("Este campo é requerido");
+      return false;
+    }
+
+    return true;
+  }
+
+/**
+ * Show Data
+ */
+ function showData(){
+    var peopleList;
+    if(localStorage.getItem("peopleList") == null){
+      peopleList = [];
+    }
+    else{
+      peopleList = JSON.parse(localStorage.getItem("peopleList"))
+    }
+
+    var html = "";
+    peopleList.forEach(function(element,index){
+    html += "<tr>";
+    html += "<td>" + element.name + "</td>";
+    html += "<td>" + element.email + "</td>";
+    html += "<td>" + element.subject + "</td>";
+    html += "<td>" + element.message + "</td>";
+    html += '<td><button onclick= "deleteData('+index+')" class="btn btn-danger">Apagar</button><button onclick="updateData('+index+')" class="btn btn-warning m-2">Editar</button></td>';
+    html += "</tr>";
     });
-  });
+    document.querySelector("#crudTable tbody").innerHTML = html;
+ }
+
+
+
+  //Function to add data
+  function addData(){
+    //if form is validate
+    if(validateForm() == true){
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var subject = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+
+      var peopleList;
+      if(localStorage.getItem("peopleList") == null){
+        peopleList = [];
+      }else{
+        peopleList = JSON.parse(localStorage.getItem("peopleList"));
+      }
+      peopleList.push({
+        name : name,
+        email : email,
+        subject : subject,
+        message : message,
+      });
+
+      localStorage.setItem("peopleList", JSON.stringify
+        (peopleList));
+        showData();
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+    }
+  }
 
   /**
    * Preloader
