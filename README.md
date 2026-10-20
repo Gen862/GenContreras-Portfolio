@@ -1,48 +1,35 @@
-# 🌐 Meu Portfólio Pessoal
+# Portafolio de Gen Contreras
 
-Este repositório contém o código-fonte do meu portfólio profissional, desenvolvido com **Bootstrap**, **HTML5**, **CSS3** e **JavaScript**. O objetivo deste projeto é apresentar as minhas competências, experiências e projetos de forma interativa, moderna e responsiva.
+Landing page personal de Gen Contreras, disponible en español, portugués e
+inglés. Presenta sus servicios IT, proyectos, trayectoria, agencia de marketing,
+perfil artístico, voluntariado y playlists.
 
-Ver site:👉 https://gen862.github.io/GenContreras-Portfolio/
----
+## Tecnologías
 
-## 📌 Seções do Portfólio
+TanStack Start, React, Tailwind CSS y lucide-react.
 
-### 🏠 Início
-Introdução com uma saudação acolhedora e uma breve frase de impacto que resume a minha área de atuação e paixão pelo desenvolvimento.
+## Desarrollo local
 
-### 👤 Sobre Mim
-Uma secção dedicada à minha trajetória, dados, formação e objetivos profissionais. Aqui compartilho a minha visão sobre o mundo da tecnologia e o que me motiva como profissional.
+Requisitos: Node.js 24 LTS y pnpm.
 
-### 📃 Resumo
-Apresenta o meu **currículo resumido**: experiências profissionais, competências técnicas e educacionais mais relevantes.
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-### 🎨 Portfólio
-Galeria interativa com os projetos mais importantes que desenvolvi. Cada projeto conta com uma descrição breve, tecnologias utilizadas e link para visualização.
+La página queda disponible en `http://localhost:3000`.
 
-### 💼 Serviços
-Descrição dos serviços que ofereço, como desenvolvimento de sites responsivos, landing pages, manutenção e otimização de código, aulas, consultorias, entre outros.
+## Compilar y validar
 
-### 📬 Contacto
-Formulário funcional para contacto direto, além de links para redes sociais profissionais (LinkedIn, GitHub, etc.).
+```bash
+pnpm build
+pnpm test
+pnpm typecheck
+```
 
----
+## Contenido
 
-## 🚀 Aceda ao Portfólio Online
-
-Se quiseres ver o portfólio em funcionamento, visita o link abaixo:
-
-👉 
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- Bootstrap 5
-- JavaScript
-- Git & GitHub
-
----
-
-Feito com 💙 por Gen Contreras
+- Textos, enlaces y datos: `src/lib/content.ts`
+- Traducciones y preferencia de idioma: `src/lib/i18n.tsx`
+- Secciones y diseño: `src/routes/index.tsx` y `src/styles.css`
+- Imágenes y CV: `public/`
