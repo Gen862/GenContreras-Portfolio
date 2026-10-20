@@ -1,5 +1,7 @@
 // All site copy lives here so it can be edited without touching layout code.
 
+import { publicPath } from './img'
+
 export const CONTACT_EMAIL = 'contacto@migranteslibres.com'
 
 export const profile = {
@@ -13,15 +15,21 @@ export const profile = {
 export const cvDocuments = [
   {
     label: 'Descargar en Español',
-    href: '/cv/Curriculum%20Vitae%20ESPA%C3%91OL%20-%20Gen%20Contreras.pdf',
+    href: publicPath(
+      'cv/Curriculum%20Vitae%20ESPA%C3%91OL%20-%20Gen%20Contreras.pdf',
+    ),
   },
   {
     label: 'Descargar en Portugués',
-    href: '/cv/Curriculum%20Vitae%20PORTUGUES%20-%20Gen%20Contreras.pdf',
+    href: publicPath(
+      'cv/Curriculum%20Vitae%20PORTUGUES%20-%20Gen%20Contreras.pdf',
+    ),
   },
   {
     label: 'Descargar en Inglés',
-    href: '/cv/Curriculum%20Vitae%20ENGLISH%20-%20Gen%20Contreras.pdf',
+    href: publicPath(
+      'cv/Curriculum%20Vitae%20ENGLISH%20-%20Gen%20Contreras.pdf',
+    ),
   },
 ] as const
 

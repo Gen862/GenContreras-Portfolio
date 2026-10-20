@@ -4,6 +4,7 @@ import {
   type ErrorComponentProps,
 } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
+import { publicPath } from '@/lib/img'
 
 export function NotFoundPage() {
   return (
@@ -46,7 +47,7 @@ export function RouteErrorPage({ reset }: ErrorComponentProps) {
             Try again
           </Button>
           <Button variant="outline" asChild>
-            <a href="/">Go home</a>
+            <a href={publicPath('')}>Go home</a>
           </Button>
         </div>
       </div>

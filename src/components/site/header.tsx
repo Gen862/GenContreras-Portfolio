@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/sheet'
 import { navLinks, profile } from '@/lib/content'
 import { cn } from '@/lib/utils'
+import { img } from '@/lib/img'
 
 export function Logo() {
   const { t } = useLanguage()
@@ -24,7 +25,7 @@ export function Logo() {
       aria-label={`${profile.name}, ${t('inicio')}`}
     >
       <img
-        src="/img/gle-logo.png"
+        src={img('gle-logo.png')}
         alt=""
         width={36}
         height={36}

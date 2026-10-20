@@ -4,8 +4,19 @@ import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
+  base: process.env.GITHUB_PAGES === 'true' ? '/GenContreras-Portfolio/' : '/',
   resolve: { tsconfigPaths: true },
-  plugins: [tailwindcss(), tanstackStart(), viteReact()],
+  plugins: [
+    tailwindcss(),
+    tanstackStart({
+      prerender: {
+        enabled: process.env.GITHUB_PAGES === 'true',
+        failOnError: true,
+        crawlLinks: false,
+      },
+    }),
+    viteReact(),
+  ],
 })
 
 export default config

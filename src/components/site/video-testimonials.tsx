@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 
 import { videoTestimonials } from '@/lib/content'
 import { useLanguage } from '@/lib/i18n'
+import { img } from '@/lib/img'
 
 function subscribeToMotionPreference(listener: () => void) {
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -192,7 +193,7 @@ export function VideoTestimonialsCarousel() {
                 controls
                 playsInline
                 preload="none"
-                poster={`/img/${video.poster}`}
+                poster={img(video.poster)}
                 className="aspect-[9/16] w-full object-contain"
                 aria-label={`${t('Testimonio en video de')} ${video.name}`}
                 onPlay={() => setIsPlaying(true)}

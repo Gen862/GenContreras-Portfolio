@@ -3,6 +3,7 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { NotFoundPage } from '@/components/error-pages'
+import { publicPath } from '@/lib/img'
 
 import '../styles.css'
 
@@ -41,7 +42,7 @@ export const Route = createRootRoute({
       },
       {
         property: 'og:image',
-        content: '/img/cloud-architecture-optimized.webp',
+        content: publicPath('img/cloud-architecture-optimized.webp'),
       },
       {
         name: 'twitter:card',
@@ -66,7 +67,7 @@ export const Route = createRootRoute({
       {
         rel: 'preload',
         as: 'image',
-        href: '/img/gen-contreras-optimized.webp',
+        href: publicPath('img/gen-contreras-optimized.webp'),
       },
     ],
   }),
