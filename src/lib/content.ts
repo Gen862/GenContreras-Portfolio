@@ -16,19 +16,19 @@ export const cvDocuments = [
   {
     label: 'Descargar en Español',
     href: publicPath(
-      'cv/Curriculum%20Vitae%20ESPA%C3%91OL%20-%20Gen%20Contreras.pdf',
+      'cv/Curriculum%20Vitae%20ES%20-%20Gen%20Contreras.pdf',
     ),
   },
   {
     label: 'Descargar en Portugués',
     href: publicPath(
-      'cv/Curriculum%20Vitae%20PORTUGUES%20-%20Gen%20Contreras.pdf',
+      'cv/Curriculum%20Vitae%20PT%20-%20Gen%20Contreras.pdf',
     ),
   },
   {
     label: 'Descargar en Inglés',
     href: publicPath(
-      'cv/Curriculum%20Vitae%20ENGLISH%20-%20Gen%20Contreras.pdf',
+      'cv/Curriculum%20Vitae%20EN%20-%20Gen%20Contreras.pdf',
     ),
   },
 ] as const

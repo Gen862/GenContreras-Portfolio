@@ -34,9 +34,9 @@ describe('video testimonials', () => {
 
   it('provides downloadable CV files in all three languages', () => {
     expect(cvDocuments.map((document) => document.href)).toEqual([
-      '/cv/Curriculum%20Vitae%20ESPA%C3%91OL%20-%20Gen%20Contreras.pdf',
-      '/cv/Curriculum%20Vitae%20PORTUGUES%20-%20Gen%20Contreras.pdf',
-      '/cv/Curriculum%20Vitae%20ENGLISH%20-%20Gen%20Contreras.pdf',
+      '/cv/Curriculum%20Vitae%20ES%20-%20Gen%20Contreras.pdf',
+      '/cv/Curriculum%20Vitae%20PT%20-%20Gen%20Contreras.pdf',
+      '/cv/Curriculum%20Vitae%20EN%20-%20Gen%20Contreras.pdf',
     ])
   })
 })
